@@ -19,22 +19,25 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2 // log 출력용
 
 public class SampleTests {
-	
+
 	@Setter(onMethod_ = @Autowired) // setRestaurant(Restaurant)
-	private Restaurant restaurant;  // Restaurant restaurant = new Restaurant(restaurant);
-	
+	private Restaurant restaurant; // Restaurant restaurant = new Restaurant(restaurant);
+
 	@Test // import org.junit.Test; 메서드 별로 테스트가 진행됨. (메서드명 블럭 -> 우클릭 -> run as -> junit)
 	public void textExist() {
-		
+
 		assertNotNull(restaurant); // assertNotNull() 객체가 null인지 여부
 		log.info(restaurant);
 		log.info("--------------------");
 		log.info(restaurant.getChef()); // restaurant 객체에 있는 Chef 필드를 가져와 출력
-		
-		// INFO  net.lhwcloud.sample.SampleTests(textExist30) - Restaurant(chef=Chef(name=null, age=0, regDate=null), restaurantName=null, openTime=null, closeTime=null)
-		// INFO  net.lhwcloud.sample.SampleTests(textExist31) - --------------------
-		// INFO  net.lhwcloud.sample.SampleTests(textExist32) - Chef(name=null, age=0, regDate=null)
-		
+
+		// INFO net.lhwcloud.sample.SampleTests(textExist30) -
+		// Restaurant(chef=Chef(name=null, age=0, regDate=null), restaurantName=null,
+		// openTime=null, closeTime=null)
+		// INFO net.lhwcloud.sample.SampleTests(textExist31) - --------------------
+		// INFO net.lhwcloud.sample.SampleTests(textExist32) - Chef(name=null, age=0,
+		// regDate=null)
+
 	}
-	
+
 }

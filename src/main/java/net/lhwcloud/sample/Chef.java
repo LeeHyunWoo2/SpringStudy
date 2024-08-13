@@ -12,7 +12,7 @@ import lombok.Data;
 // @AllArgsConstructor // 모든 필드값을 활용하는 생성자 만듦
 
 public class Chef {
-	
+
 	private String name;
 	private int age;
 	private Date regDate;
