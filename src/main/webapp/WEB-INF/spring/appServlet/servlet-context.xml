@@ -21,7 +21,22 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="net.lhwcloud.www" />
+	<!--  프론트에서 넘어오는 파일에 대한 처리  -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!--  파일명이 한글일 수 있으니 인코딩  -->
+		<beans:property name="defaultEncoding" value="utf-8"/>
+		<!--  묶음파일 최대 1024 * 1024 * 10 bytes 100MB  -->
+		<beans:property name="maxUploadSize" value="1048575600"/>
+		<!--  파일당 최대 1024 * 1024 * 2 bytes 20MB  -->
+		<beans:property name="maxUploadSizePerFile" value="20971052"/>
+		<!--  업로드 저장 경로 d:\upload\tmp -> maxInMemorySize 이상 크기가 넘어오면 임시로 보관  -->
+		<beans:property name="uploadTempDir" value="file:/C:/upload/tmp"/>
+		<!--  업로드 시 버퍼용량 (당연히 maxUploadSize 보다 커야함 버퍼니까)  -->
+		<beans:property name="maxInMemorySize" value="1048575600"/>
+	</beans:bean>
+	
+	<context:component-scan base-package="net.lhwcloud.controller" />
+	<context:component-scan base-package="net.lhwcloud.exception" />
 	
 	
 	
