@@ -25,7 +25,7 @@ public class SampleHotel {
 	
 	@NonNull
 	private Chef chef;
-	private final String HotelName;
+	// private final String HotelName;
 	private Date HotelAge;
 	
 //	public SampleHotel(Chef chef) { // SampleHotel sampleHotel = new SampleHotel(chef);
